@@ -1,27 +1,58 @@
-# Terraform
+# ==========================================
+# TERRAFORM
+# ==========================================
 .terraform/
+.terraform.lock.hcl
 *.tfstate
 *.tfstate.*
 *.tfplan
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
 crash.log
+crash.*.log
 override.tf
 override.tf.json
 *_override.tf
 *_override.tf.json
 
-# Ansible
+# ==========================================
+# ANSIBLE
+# ==========================================
 *.retry
+*.log
 .ansible/
+ansible/vault_password.txt
+.vault_pass
 
-# Python
+# ==========================================
+# PYTHON
+# ==========================================
 __pycache__/
 *.py[cod]
+*$py.class
 .venv/
 venv/
+ENV/
 
-# Local credentials and environment
+# ==========================================
+# SEGURANÇA E CREDENCIAIS
+# ==========================================
+*.pub
+*.pem
+*.key
+id_rsa*
+id_ed25519*
 .env
 .env.*
 !.env.example
-*.pem
-*.key
+
+# ==========================================
+# SISTEMA OPERACIONAL E IDE
+# ==========================================
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
