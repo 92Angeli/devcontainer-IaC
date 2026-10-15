@@ -1,0 +1,34 @@
+{
+  "name": "IaC Devcontainer Environment (Terraform, Ansible, Python)",
+  "build": {
+    "dockerfile": "dockerfile"
+  },
+  "remoteUser": "vscode",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": true,
+        "[terraform]": {
+          "editor.defaultFormatter": "hashicorp.terraform"
+        },
+        "[yaml]": {
+          "editor.defaultFormatter": "redhat.vscode-yaml"
+        }
+      },
+      "extensions": [
+        "hashicorp.terraform",
+        "redhat.ansible",
+        "ms-python.python",
+        "ms-azuretools.vscode-containers",
+        "redhat.vscode-yaml",
+        "eamodio.gitlens"
+      ]
+    }
+  },
+  "mounts": [
+    "source=${localEnv:USERPROFILE}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+  ],
+  "postStartCommand": "sudo chmod 700 /home/vscode/.ssh && sudo chmod 600 /home/vscode/.ssh/* 2>/dev/null || true"
+}
