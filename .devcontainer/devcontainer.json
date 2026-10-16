@@ -1,7 +1,7 @@
 {
   "name": "IaC Devcontainer Environment (Terraform, Ansible, Python)",
   "build": {
-    "dockerfile": "dockerfile"
+    "dockerfile": "Dockerfile"
   },
   "remoteUser": "vscode",
   "customizations": {
